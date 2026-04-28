@@ -11,21 +11,23 @@ void solve(){
             int x; cin >> x;
             cnt[x]++;
         }
-        vector<int> arr;
+        vector<ll> arr;
         for(const auto& i : cnt){
             arr.push_back(i.second);
         }
         sort(arr.begin(), arr.end());
-        // 下一次可以取 < nextTake 的
-        ll ans = arr.back(), nextTake = arr.back();
-        for(int i = arr.size() - 2; i >= 0; i--){
-            if(arr[i] > nextTake){
-                ans += nextTake - 1;
+        // 下一次可以取 <= nextTake 的
+        //1 4 8 4 5 6 3 8
+        //1 1 2 1 1 2
+        ll ans = 0, nextTake = INT_MAX;
+        for(int i = arr.size() - 1; i >= 0; i--){
+            ans += min(arr[i], nextTake);
+            if(nextTake <= arr[i]){
                 nextTake--;
-            }else if(arr[i] < nextTake){
-                ans += arr[i];
-                nextTake = arr[i];
+            }else{
+                nextTake = arr[i] - 1;
             }
+            if(nextTake == 0) break;
         }
         cout << ans << '\n';
     }
