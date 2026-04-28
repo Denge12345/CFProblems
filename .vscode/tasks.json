@@ -7,16 +7,13 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "-save-temps",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\outputs\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}",
-                "env": {
-                    "TMP": "D:\\Code\\DevCFiles\\CFProblems\\.vscode\\Temp",
-                    "TEMP": "D:\\Code\\DevCFiles\\CFProblems\\.vscode\\Temp"
-                }
             },
             "problemMatcher": [
                 "$gcc"
