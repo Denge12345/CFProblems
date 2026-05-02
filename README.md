@@ -2,7 +2,6 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Denge12345/CFProblems)](https://github.com/Denge12345/CFProblems)
 [![GitHub contributors](https://img.shields.io/github/contributors/Denge12345/CFProblems)](https://github.com/Denge12345/CFProblems/graphs/contributors)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Denge12345/CFProblems/pulls)
 
 A repository of Codeforces problem solutions and editorials.
 
