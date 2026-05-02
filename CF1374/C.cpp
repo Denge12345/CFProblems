@@ -1,9 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
 void solve(){
+    int n; cin >> n;
+    string s; cin >> s;
+    stack<char> stk;
+    for(char c : s){
+        if(c == ')'){
+            if(!stk.empty() && stk.top() == '('){
+                stk.pop();
+            }else{
+                stk.push(c);
+            }
+        }else{
+            stk.push(c);
+        }
+    }
     
+    cout << stk.size() / 2 << '\n';
 }
 
 int main(){
