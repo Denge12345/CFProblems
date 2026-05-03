@@ -10,7 +10,7 @@
                 "-save-temps",
                 "${file}",
                 "-o",
-                "${fileDirname}\\outputs\\${fileBasenameNoExtension}.exe"
+                "D:\\Code\\DevCFiles\\outputs\\${relativeFileDirname}\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}",
