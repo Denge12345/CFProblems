@@ -28,7 +28,23 @@
 **思路**：
 
 
-#### [CF1141D](https://codeforces.com/contest/1141/problem/E)
+#### [CF1141E](https://codeforces.com/contest/1141/problem/E)
+**题意**：
+
+**数据范围**：
+
+**思路**：
+
+
+#### [CF1141F1/CF1141F2](https://codeforces.com/contest/1141/problem/F1)
+**题意**：
+
+**数据范围**：
+
+**思路**：
+
+
+#### [CF1141G](https://codeforces.com/contest/1141/problem/G)
 **题意**：
 
 **数据范围**：
