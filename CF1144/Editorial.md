@@ -5,13 +5,30 @@
 
 **思路**：将字母存入数组，然后进行排序，对于每一个 $i \in [1, n - 1]$ 如果 $a_{i - 1} + 1 \neq a_i$ 则输出 `No` 否则输出 `Yes`。
 
-#### [CF1141B](https://codeforces.com/contest/1144/problem/B)
+#### [CF1144B](https://codeforces.com/contest/1144/problem/B)
+**题意**： 
 
+**数据范围**：
 
-#### [CF1141C](https://codeforces.com/contest/1144/problem/C)
+**思路**：
 
+#### [CF1144C](https://codeforces.com/contest/1144/problem/C)
+**题意**： 
 
-#### [CF1141D](https://codeforces.com/contest/1144/problem/D)
+**数据范围**：
 
+**思路**：
 
-#### [CF1141E](https://codeforces.com/contest/1144/problem/E)
+#### [CF1144D](https://codeforces.com/contest/1144/problem/D)
+**题意**： 
+
+**数据范围**：
+
+**思路**：
+
+#### [CF1144E](https://codeforces.com/contest/1144/problem/E)
+**题意**： 
+
+**数据范围**：
+
+**思路**：
