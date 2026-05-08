@@ -18,3 +18,17 @@
 **数据范围**：
 
 **思路**：
+
+#### [CF1154D](https://codeforces.com/contest/1154/problem/D)
+**题意**： 
+
+**数据范围**：
+
+**思路**：
+
+#### [CF1154E](https://codeforces.com/contest/1154/problem/E)
+**题意**： 
+
+**数据范围**：
+
+**思路**：
