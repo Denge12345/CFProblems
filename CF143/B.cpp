@@ -16,16 +16,17 @@ void solve(){
     string ans;
     if(isDecimal){
         int decimalPos = s.find('.');
+        string intPart = s.substr(decimalPos + 1);
         string decimalPart = s.substr(0, decimalPos);
-        string integerPart = s.substr(decimalPos + 1);
-        if(decimalPart.size() < 2) decimalPart += '0';
         reverse(decimalPart.begin(), decimalPart.end());
-        ans = decimalPart.substr(0, 2) + '.';
-        for(int i = 0; i < integerPart.size(); i++){
+        if(decimalPart.size() < 2) decimalPart += '0';
+        else if(decimalPart.size() >= 2) decimalPart = decimalPart.substr(0, 2);
+        for(int i = 0; i < intPart.size(); i++){    
             if(i > 0 && i % 3 == 0) ans += ',';
-            ans += integerPart[i];
+            ans += intPart[i];
         }
         reverse(ans.begin(), ans.end());
+        ans += '.' + decimalPart;
     }else{
         for(int i = 0; i < s.size(); i++){
             if(i > 0 && i % 3 == 0) ans += ',';
