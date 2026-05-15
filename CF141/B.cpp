@@ -9,7 +9,7 @@ void solve(){
     }
     int k = y / a;
     if(k == 0 || k % 2 == 1){
-        if(abs(2 * x) < a) cout << max(1, (k + 1) / 2 * 3 - 1) << '\n';
+        if(abs(2 * x) < a) cout << max(1, (3 * k + 1) / 2) << '\n';
         else cout << -1 << '\n';
     }else if(k % 2 == 0){
         if(x != 0) cout << k / 2 * 3 + (x + a) / a << '\n';
