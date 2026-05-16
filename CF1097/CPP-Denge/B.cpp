@@ -9,8 +9,17 @@ void solve(){
     for(int i = 0; i < n; i++) cin >> a[i];
     bool ok = 0;
     for(int status = 0; status < (1 << n); status++){
-        
+        int angle = 0;
+        for(int i = 0; i < n; i++){
+            if(status & (1 << i)) angle += a[i];
+            else angle -= a[i];
+        }
+        if((angle % 360 + 360) % 360 == 0){
+            ok = 1;
+            break;
+        }
     }
+    cout << (ok ? "YES" : "NO") << '\n';
 }
 
 int main() {
