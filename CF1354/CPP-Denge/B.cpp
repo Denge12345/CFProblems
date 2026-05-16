@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool check(string s, int k){
+/*bool check(string s, int k){
     int cnt1 = 0, cnt2 = 0, cnt3 = 0;
     for(int i = 0; i < k - 1; i++){
         if(s[i] == '1') cnt1++;
@@ -38,6 +38,26 @@ void solve(){
         }
     }
     cout << ans << '\n';
+}*/
+
+void solve(){
+    string s; cin >> s;
+    int n = s.size();
+    int cnt1 = 0, cnt2 = 0, cnt3 = 0;
+    int l = 0, ans = INT_MAX;
+    for(int r = 0; r < n; r++){
+        if(s[r] == '1') cnt1++;
+        else if(s[r] == '2') cnt2++;
+        else cnt3++;
+        while(cnt1 && cnt2 && cnt3){
+            ans = min(ans, r - l + 1);
+            if(s[l] == '1') cnt1--;
+            else if(s[l] == '2') cnt2--;
+            else cnt3--;
+            l++;
+        }
+    }
+    cout << (ans == INT_MAX ? 0 : ans) << '\n';
 }
 
 int main() {
