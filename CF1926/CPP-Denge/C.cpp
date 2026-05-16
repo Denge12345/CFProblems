@@ -4,7 +4,7 @@ using namespace std;
 const int N = 2e5 + 9;
 int a[N];
 
-void init(){
+/*void init(){
     for(int i = 1; i <= 9; i++) a[i] = i;
     for(int i = 10; i <= 2e5; i++){
         int tmp = i, sum = 0;
@@ -15,6 +15,15 @@ void init(){
         a[i] = sum;
     }
     for(int i = 1; i <= 2e5; i++) a[i] += a[i - 1];
+}*/
+
+void init(){
+    for(int i = 1; i <= 2e5; i++){
+        a[i] = a[i / 10] + (i % 10);
+    }
+    for(int i = 1; i <= 2e5; i++){
+        a[i] += a[i - 1];
+    }
 }
 
 void solve(){
