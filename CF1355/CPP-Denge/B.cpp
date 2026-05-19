@@ -20,7 +20,6 @@ void solve(){
             arr.push_back(x);
         }
     }
-    //2 3 4 4 5
     for(int i = 0, c = 1; i < arr.size(); i++, c++){
         if(c == arr[i]){
             ans++;
