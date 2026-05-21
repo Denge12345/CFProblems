@@ -23,8 +23,8 @@ void solve(){
         return;
     }
     ll target = (2 * sum) / n;
-    map<int, int> mp;
-    int ans = 0;
+    map<ll, int> mp;
+    ll ans = 0;
     for(int i = 1; i <= n; i++){
         if(mp.count(target - a[i])){
             ans += mp[target - a[i]];
