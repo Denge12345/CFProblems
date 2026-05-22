@@ -9,30 +9,33 @@ import java.io.PrintWriter;
 import java.io.StreamTokenizer;
 
 public class A {
+
+    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    static StreamTokenizer in = new StreamTokenizer(br);
+    static PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StreamTokenizer in = new StreamTokenizer(br);
-        PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
         int t = 1;
         in.nextToken();
         t = (int) in.nval;
         while(t-- > 0){
-            in.nextToken();
-            String a = in.sval;
-            in.nextToken();
-            String b = in.sval;
-            out.println(solve(a, b));
+            solve();
         }
         out.flush();
 		br.close();
 		out.close();
     }
-    public static String solve(String a, String b){
+    
+    public static void solve() throws IOException {
+        in.nextToken();
+        String a = in.sval;
+        in.nextToken();
+        String b = in.sval;
         char[] aArr = a.toCharArray();
         char[] bArr = b.toCharArray();
         char tmp = aArr[0];
         aArr[0] = bArr[0];
         bArr[0] = tmp;
-        return new String(aArr) + " " + new String(bArr);
+        out.println(new String(aArr) + " " + new String(bArr));
     }
 }

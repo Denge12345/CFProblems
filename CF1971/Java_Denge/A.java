@@ -25,6 +25,7 @@ public class A {
 		br.close();
 		out.close();
     }
+    
     public static void solve() throws IOException {
         in.nextToken();
         int a = (int) in.nval;
