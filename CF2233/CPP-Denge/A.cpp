@@ -9,8 +9,8 @@ void solve(){
     cin >> n >> x >> y >> z;
     int t1 = (n + x + y - 1) / (x + y);
     int t2;
-    if(x * z >= n){
-        t2 = (n + x - 1) / n;
+    if(1ll * x * z >= n){
+        t2 = (n + x - 1) / x;
     }else{
         int r = n - x * z;
         t2 = z + (r + x + 10 * y - 1) / (x + 10 * y);
