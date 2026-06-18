@@ -3,31 +3,19 @@ using namespace std;
 
 const int N = 1005;
 char mp[N][N];
-int cnt[N][N], n, m;
+int id[N][N], sz[N * N], n, m;
 int dx[] = {-1, 1, 0, 0};
 int dy[] = {0, 0, -1, 1};
 
-int bfs(int i, int j){
-    queue<pair<int, int>> q;
-    q.push({i, j});
-    vector<vector<bool>> vis(n + 1, vector<bool>(m + 1));
-    vis[i][j] = true;
-    int ans = 1;
-    while(!q.empty()){
-        int x = q.front().first;
-        int y = q.front().second;
-        q.pop();
-        for(int k = 0; k < 4; k++){
-            int nx = x + dx[k];
-            int ny = y + dy[k];
-            if(nx >= 1 && nx <= n && ny >= 1 && ny <= m && !vis[nx][ny] && mp[nx][ny] == '.'){
-                vis[nx][ny] = true;
-                q.push({nx, ny});
-                ans++;
-            }
+void dfs(int x, int y, int cur){
+    id[x][y] = cur;
+    sz[cur]++;
+    for(int k = 0; k < 4; k++){
+        int nx = x + dx[k], ny = y + dy[k];
+        if(nx >= 1 && nx <= n && ny >= 1 && ny <= m && mp[nx][ny] == '.' && !id[nx][ny]){
+            dfs(nx, ny, cur);
         }
     }
-    return ans;
 }
 
 void solve(){
@@ -37,17 +25,33 @@ void solve(){
             cin >> mp[i][j];
         }
     }
-    for(int i = 1; i <= n; i++){
+    for(int i = 1, cnt = 1; i <= n; i++){
         for(int j = 1; j <= m; j++){
-            if(mp[i][j] == '*'){
-                cnt[i][j] = bfs(i, j);
+            if(mp[i][j] == '.' && !id[i][j]){
+                dfs(i, j, cnt);
+                cnt++;
             }
         }
     }
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= m; j++){
-            if(mp[i][j] == '*') cout << cnt[i][j] % 10;
-            else cout << mp[i][j];
+            if(mp[i][j] == '*'){
+                int ans = 1;
+                set<int> vis;
+                for(int k = 0; k < 4; k++){
+                    int ni = i + dx[k], nj = j + dy[k];
+                    if(ni >= 1 && ni <= n && nj >= 1 && nj <= m && mp[ni][nj] == '.'){
+                        int cur = id[ni][nj];
+                        if(!vis.count(cur)){
+                            ans += sz[cur];
+                            vis.insert(cur);
+                        }
+                    }
+                }
+                cout << ans % 10;
+            }else{
+                cout << '.';
+            }
         }
         cout << '\n';
     }
