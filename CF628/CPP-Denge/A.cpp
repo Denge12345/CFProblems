@@ -2,7 +2,7 @@
 using namespace std;
 using ll = long long;
 
-void solve(){
+/*void solve(){
     int n, b, p; cin >> n >> b >> p;
     int m = n, x = 0, y = n * p;
     while(m != 1){
@@ -13,6 +13,11 @@ void solve(){
         m = (m - k) + k / 2;
     }
     cout << x << ' ' << y << '\n';
+}*/
+
+void solve(){
+    int n, b, p; cin >> n >> b >> p;
+    cout << (n - 1) * (2 * b + 1) << ' ' << n * p << '\n';
 }
 
 int main() {
