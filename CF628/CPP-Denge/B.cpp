@@ -3,7 +3,15 @@ using namespace std;
 using ll = long long;
 
 void solve(){
-    // 数位dp
+    string s; cin >> s;
+    ll ans = ((s[0] - '0') % 4 == 0 ? 1 : 0);
+    for(int i = 1; i < s.size(); i++){
+        int n1 = s[i - 1] - '0';
+        int n2 = s[i] - '0';
+        if(n2 % 4 == 0) ans++;
+        if((n1 * 10 + n2) % 4 == 0) ans += i;
+    }
+    cout << ans << '\n';
 }
 
 int main() {
