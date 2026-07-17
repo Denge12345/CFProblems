@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve(){
+/*void solve(){
     int n, m, a, b;
     cin >> n >> m >> a >> b;
     int ans = INT_MAX;
@@ -10,6 +10,13 @@ void solve(){
         ans = min(ans, i * a + left * b);
     }
     cout << ans << '\n';
+}*/
+
+void solve(){
+    int n, m, a, b;
+    cin >> n >> m >> a >> b;
+    int k = n / m, r = n % m;
+    cout << min(n * a, k * b + min(r * a, b)) << '\n';
 }
 
 int main(){
